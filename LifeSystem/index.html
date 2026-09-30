@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>⚔️ LIFE SYSTEM</h1>
+    <p>نظام تطويرك الشخصي</p>
+</header>
+
+<main>
+    <section class="player-card">
+        <div class="player-info">
+            <h2 id="rank">🌱 المبتدئ</h2>
+            <p>المستوى <span id="level">1</span></p>
+        </div>
+        <div class="stats">
+            <div><span>XP</span><strong id="xp">0</strong></div>
+            <div><span>🪙 العملات</span><strong id="coins">0</strong></div>
+            <div><span>🔥 السلسلة</span><strong id="streak">0</strong></div>
+        </div>
+        <div class="xp-container"><div id="xp-bar"></div></div>
+        <p id="xp-text">0 / 500 XP</p>
+        <p id="reset-timer" class="reset-timer">التحديث القادم: --:--:--</p>
+    </section>
+
+    <section class="card">
+        <h2>➕ إضافة مهمة</h2>
+        <input id="task-name" type="text" placeholder="اسم المهمة">
+        <select id="task-difficulty">
+            <option value="easy">سهلة (+10 XP)</option>
+            <option value="medium">متوسطة (+25 XP)</option>
+            <option value="hard">صعبة (+50 XP)</option>
+            <option value="boss">Boss (+100 XP)</option>
+        </select>
+        <button onclick="addTask()">إضافة المهمة</button>
+    </section>
+
+    <section class="card">
+        <h2>📜 مهام اليوم</h2>
+        <div id="task-list"></div>
+    </section>
+
+    <section class="card">
+        <h2>🎁 صناديق الهدايا</h2>
+        <p class="shop-note">المكافأة مخفية حتى تفتح الصندوق. الحظ، ذلك النظام الاقتصادي الذي اخترعه البشر.</p>
+
+        <div class="gift-grid">
+            <button class="gift-box" onclick="openGift(0)">
+                <span>🎁</span>
+                <small>صندوق غامض</small>
+            </button>
+
+            <button class="gift-box" onclick="openGift(1)">
+                <span>🎁</span>
+                <small>صندوق غامض</small>
+            </button>
+
+            <button class="gift-box" onclick="openGift(2)">
+                <span>🎁</span>
+                <small>صندوق غامض</small>
+            </button>
+        </div>
+
+        <p id="gift-status" class="gift-status">أنجز المهام لتحصل على عملات وتفتح الصناديق.</p>
+    </section>
+
+    <section class="card">
+        <h2>🏆 الإنجازات</h2>
+        <div id="achievements"></div>
+    </section>
+</main>
+
+<footer>LIFE SYSTEM © 2026</footer>
+<script src="script.js"></script>
+</body>
+</html>
